@@ -244,11 +244,6 @@ public class HookStubManager {
             args = entity.getArgs(stubArgs);
         }
 
-        if (thiz == null)
-        {
-            thiz = originMethod.getDeclaringClass();
-        }
-
         if (XposedBridge.disableHooks) {
             if (hasStubBackup) {
                 return callOrigin.call(stubArgs);
