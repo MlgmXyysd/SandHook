@@ -891,7 +891,7 @@ public final class XposedHelpers {
 	/** Returns the value of an object field in the given object instance. A class reference is not sufficient! See also {@link #findField}. */
 	public static Object getObjectField(Object obj, String fieldName) {
 		try {
-			return findField(obj.getClass(), fieldName).get(obj);
+			return findField((Class)obj, fieldName).get(obj);
 		} catch (IllegalAccessException e) {
 			// should not happen
 			XposedBridge.log(e);
